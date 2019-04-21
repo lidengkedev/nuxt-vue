@@ -1,6 +1,10 @@
 <template>
     <div class="container">
         <h1>{{ name }}</h1>
+        <h2>{{ msg1 }}</h2>
+        <h2>{{ msg2 }}</h2>
+        <button @click="getReq">get请求</button>
+        <button @click="postReq">post请求</button>
     </div>
 </template>
 
@@ -9,7 +13,9 @@ import axios from 'axios'
 export default {
     data () {
         return {
-            name: 'Hello World !'
+            name: 'Hello World !',
+            msg1: '这是一个信息',
+            msg2: '这是一个信息'
         }
     },
     asyncData (context) {
@@ -46,7 +52,19 @@ export default {
         // 必须是number类型
         return /^\d+$/.test(params.id)
     },
-    middleware () {}
+    middleware () {},
+    methods: {
+        getReq () {
+            axios.get('http://localhost:3001/api', { params: { msg: 'get', url: '/api' } }).then(res => {
+                this.msg1 = res.data;
+            }).catch(err => console.log(err))
+        },
+        postReq () {
+            axios.post('http://localhost:3001/api/post', { msg: 'post', url: '/api/post' }).then(res => {
+                this.msg2 = res.data;
+            }).catch(err => console.log(err))
+        }
+    }
 }
 </script>
 
