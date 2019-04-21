@@ -26,20 +26,17 @@ export default {
     /*
     ** Global CSS
     */
-    css: [
-    ],
+    css: [],
 
     /*
     ** Plugins to load before mounting the App
     */
-    plugins: [
-    ],
+    plugins: [],
 
     /*
     ** Nuxt.js modules
     */
-    modules: [
-    ],
+    modules: [],
 
     /*
     ** Build configuration
@@ -48,7 +45,19 @@ export default {
         /*
         ** You can extend webpack config here
         */
-        extend(config, ctx) {
-        }
+        extend(config, ctx) {}
+    },
+
+    /**
+     * 非开发环境应改为false
+     */
+    dev: true,
+
+    /**
+     * 客户端dev环境配置
+     */
+    server: {
+        port: 3333,
+        host: 'localhost'
     }
 }
