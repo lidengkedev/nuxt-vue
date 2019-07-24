@@ -26,17 +26,53 @@ export default {
     /*
     ** Global CSS
     */
-    css: [],
+    css: [
+        'element-ui/lib/theme-chalk/index.css',
+        { src: '~/styles/index.scss', lang: 'scss' },
+        { src: '~/styles/reset.css', lang: 'css' }
+    ],
 
     /*
     ** Plugins to load before mounting the App
     */
-    plugins: [],
+    plugins: [
+        { src: '~plugins/element-ui', ssr: true },
+        { src: '~plugins/server_site/index', ssr: true }
+    ],
 
     /*
     ** Nuxt.js modules
     */
-    modules: [],
+    modules: [
+        '@nuxtjs/axios',
+        '@nuxtjs/proxy'
+    ],
+
+    // 路由配置
+    router: {
+        extendRoutes(routes, resolve) {
+            routes.push({
+                path: '/',
+                name: 'Home',
+                component: resolve(__dirname, 'pages/index.vue'),
+                children: [
+                    {
+                        path: 'download/excel',
+                        name: 'DownLoadExcel',
+                        component: resolve(__dirname, 'pages/download/excel.vue')
+                    },
+                    {
+                        path: '404',
+                        name: '404',
+                        component: resolve(__dirname, 'pages/error/404.vue')
+                    }, {
+                        path: '*',
+                        redirect: '404'
+                    }
+                ]
+            })
+        }
+    },
 
     /*
     ** Build configuration
@@ -57,7 +93,11 @@ export default {
      * 客户端dev环境配置
      */
     server: {
-        port: 3333,
+        port: 3000,
         host: 'localhost'
-    }
+    },
+    proxy: [
+        ['/api', { target: 'http://localhost:4000' }],
+        ['/images', { target: 'http://localhost:4000' }]
+    ]
 }

@@ -1,6 +1,7 @@
 //index.js 服务启动文件
 var express = require('express')
 const path = require('path')
+const fs = require('fs')
 var bodyParser = require("body-parser")
 
 var app = express()
@@ -39,6 +40,18 @@ app.post('/api/post', function (req, res, next) {
     res.send({msg: 'this is post method /api/post', query: req.query, params: req.params, body: req.body})
     next();
 })
+
+// 文件下载
+app.get('/api/download/file', function(req, res) {
+    // res.setHeader('Content-Type', 'application/octet-stream;charset=utf-8')
+    res.setHeader('Content-Type', 'application/x-xls')
+    // res.setHeader('Content-Type', 'application/vnd.ms-excel; charset=utf-8')
+    res.setHeader('Content-Disposition', 'attachment; filename=' + encodeURIComponent('供应商商品批量导入模板.xls'))
+    const data = fs.readFileSync('./download/excel/供应商商品批量导入模板.xls')
+    console.table(data)
+    res.send(data)
+    // res.sendFile(path.resolve(__dirname, 'download/excel/供应商商品批量导入模板.xls'))
+})
 // 是否启用开发模式
 // if (config.dev) {
 //     let builder = new Builder(nuxt);
@@ -48,6 +61,6 @@ app.post('/api/post', function (req, res, next) {
 //自己定义的路由写它上边
 // app.use(nuxt.render);
 
-app.listen(3001, function () {
-    console.log('http://localhost:3001')
+app.listen(4000, function () {
+    console.log('http://localhost:4000')
 });

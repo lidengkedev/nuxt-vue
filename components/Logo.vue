@@ -24,9 +24,9 @@ export default {
         }
     },
     fetch ({ store, params }) {
-        return axios.get('http://my-api/stars').then((res) => {
-            store.commit('setStars', res.data)
-        })
+        // return axios.get('http://my-api/stars').then((res) => {
+        //     store.commit('setStars', res.data)
+        // })
     },
     head: {
         title: 'title',
