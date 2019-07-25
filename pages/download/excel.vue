@@ -14,16 +14,15 @@ export default {
     methods: {
         // 文件下载
         download() {
-            // axios.get('http://localhost:4000/api/download/file').then(res => {
-            //     console.log(res.data)
-            // })
             DownLoadExcelApi().then(res => {
                 console.log(res)
                 const link = document.createElement('a')
                 link.href = URL.createObjectURL(new Blob([res.data]))
                 link.download = 'Excel模板文件下载.xls'
                 link.target = '_blank'
+                document.body.appendChild(link)
                 link.click()
+                document.removeChild(link)
             })
         }
     }
