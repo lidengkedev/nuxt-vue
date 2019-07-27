@@ -8,6 +8,17 @@
 import DownLoadExcel from '~/components/DownLoad/Excel/index'
 import { DownLoadExcelApi } from '~/api/common'
 export default {
+    head: {
+        title: 'Excel文件下载',
+        meta: [
+            { charset: 'utf-8' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { name: 'description', name: 'description', content: 'Excel文件下载' }
+        ],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        ]
+    },
     components: {
         DownLoadExcel
     },

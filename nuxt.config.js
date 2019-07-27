@@ -1,17 +1,20 @@
-import pkg from './package'
+// import pkg from './package'
+const axios = require('axios');
 
-export default {
+module.exports = {
     mode: 'universal',
+    // 为Nuxt.js应用程序定义.nuxt(默认)目录
+    buildDir: 'nuxt-dist',
 
     /*
     ** Headers of the page
     */
     head: {
-        title: pkg.name,
+        title: 'nuxt-vue-project',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: pkg.description }
+            { hid: 'description', name: 'description', content: 'this is a nuxt-vue-project !' }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -21,7 +24,7 @@ export default {
     /*
     ** Customize the progress-bar color
     */
-    loading: { color: '#fff' },
+    loading: { color: '#3B8070' },
 
     /*
     ** Global CSS
@@ -47,33 +50,28 @@ export default {
         '@nuxtjs/axios',
         '@nuxtjs/proxy'
     ],
-
-    // 路由配置
-    router: {
-        extendRoutes(routes, resolve) {
-            routes.push({
-                path: '/',
-                name: 'Home',
-                component: resolve(__dirname, 'pages/index.vue'),
-                children: [
-                    {
-                        path: 'download/excel',
-                        name: 'DownLoadExcel',
-                        component: resolve(__dirname, 'pages/download/excel.vue')
-                    },
-                    {
-                        path: '404',
-                        name: '404',
-                        component: resolve(__dirname, 'pages/error/404.vue')
-                    }, {
-                        path: '*',
-                        redirect: '404'
-                    }
-                ]
-            })
+    // vue.config属性为Vue.config提供直接配置
+    vue: {
+        config: {
+            productionTip: true,
+            devtools: false
         }
     },
-
+    // transition 用于设置页面切换过渡效果的默认属性值。
+    // 想了解当 transition 的值为对象类型时有哪些可用的属性，请参考 https://zh.nuxtjs.org/api/pages-transition#object
+    transition: {
+        name: 'page',
+        mode: 'out-in',
+        beforeEnter (el) {
+            console.log('Before enter...')
+        }
+    },
+    // 设置缓存
+    cache: true,
+    //禁止预加载效果
+    performance: {
+        prefetch: false
+    },
     /*
     ** Build configuration
     */
@@ -81,13 +79,23 @@ export default {
         /*
         ** You can extend webpack config here
         */
-        extend(config, ctx) {}
+        extend(config, { isDev, isClient }) {
+            if (isDev && isClient) {
+                // config.module.rules.push({
+                //   enforce: 'pre',
+                //   test: /\.(js|vue)$/,
+                //   loader: 'eslint-loader',
+                //   exclude: /(node_modules)/
+                // })
+            }
+        },
+        vender: ['axios']
     },
 
     /**
      * 非开发环境应改为false
      */
-    dev: true,
+    dev: (process.env.NODE_ENV !== 'production'),
 
     /**
      * 客户端dev环境配置

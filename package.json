@@ -7,7 +7,7 @@
     "config": {
         "nuxt": {
             "host": "localhost",
-            "port": "3333"
+            "port": "4000"
         }
     },
     "scripts": {
@@ -15,7 +15,7 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "server": "node index.js"
+        "server": "node server/index.js"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.5.4",
@@ -24,7 +24,9 @@
         "cross-env": "^5.2.0",
         "element-ui": "^2.10.1",
         "express": "^4.16.4",
+        "koa-router": "^7.4.0",
         "nuxt": "^2.4.0",
+        "svg-captcha": "^1.4.0",
         "vue-router": "^3.0.7",
         "vuex": "^3.1.0"
     },

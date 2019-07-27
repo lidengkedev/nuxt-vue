@@ -1,10 +1,6 @@
 <template>
     <div class="container">
-        <h1>{{ name }}</h1>
-        <h2>{{ msg1 }}</h2>
-        <h2>{{ msg2 }}</h2>
-        <button @click="getReq">get请求</button>
-        <button @click="postReq">post请求</button>
+        {{name}}
     </div>
 </template>
 
@@ -13,9 +9,7 @@ import axios from 'axios'
 export default {
     data () {
         return {
-            name: 'Hello World !',
-            msg1: '这是一个信息',
-            msg2: '这是一个信息'
+            name: 'Hello World !'
         }
     },
     asyncData (context) {
@@ -29,11 +23,11 @@ export default {
         // })
     },
     head: {
-        title: 'title',
+        title: 'Logo',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { name: 'description', name: 'description', content: '' }
+            { name: 'description', name: 'description', content: '这是一个Logo组件' }
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
