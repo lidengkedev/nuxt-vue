@@ -3,7 +3,9 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 
 const _7a3960a2 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages_admin_index" */))
+const _ffa40c66 = () => interopDefault(import('..\\pages\\animation\\index.vue' /* webpackChunkName: "pages_animation_index" */))
 const _868e7f70 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
+const _06967b65 = () => interopDefault(import('..\\pages\\tabs\\index.vue' /* webpackChunkName: "pages_tabs_index" */))
 const _125be700 = () => interopDefault(import('..\\pages\\download\\excel.vue' /* webpackChunkName: "pages_download_excel" */))
 const _01923d6f = () => interopDefault(import('..\\pages\\error\\404.vue' /* webpackChunkName: "pages_error_404" */))
 const _941df83a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
@@ -87,9 +89,17 @@ export function createRouter() {
       component: _7a3960a2,
       name: "admin"
     }, {
+      path: "/animation",
+      component: _ffa40c66,
+      name: "animation"
+    }, {
       path: "/login",
       component: _868e7f70,
       name: "login"
+    }, {
+      path: "/tabs",
+      component: _06967b65,
+      name: "tabs"
     }, {
       path: "/download/excel",
       component: _125be700,

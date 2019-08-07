@@ -1,6 +1,11 @@
 <template>
     <section class="container">
-        /pages/index.vue
+        <nuxt-link class="nuxt-link" to="/admin">首页</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/animation">动画</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/download/excel">下载Excel</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/error/404">404</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/login">登录</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/tabs">Tabs</nuxt-link>
     </section>
 </template>
 
@@ -44,6 +49,17 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.nuxt-link {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #eaeaea;
+    transition-duration: .3s;
+}
+.nuxt-link:hover {
+    color: #FFF;
+    background-color: #52ccba;
+}
 </style>
