@@ -1,6 +1,5 @@
 <template>
     <section class="login">
-        <img :src="user_avator" alt="">
         <div class="form-warpper">
             <h2 class="title">登录</h2>
             <div class="form-item">

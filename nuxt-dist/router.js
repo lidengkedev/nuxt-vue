@@ -2,13 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _a25445b4 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages_admin_index" */))
-const _3d1ed75e = () => interopDefault(import('..\\pages\\animation\\index.vue' /* webpackChunkName: "pages_animation_index" */))
-const _1d558668 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
-const _8413433e = () => interopDefault(import('..\\pages\\tabs\\index.vue' /* webpackChunkName: "pages_tabs_index" */))
-const _fe4c2808 = () => interopDefault(import('..\\pages\\download\\excel.vue' /* webpackChunkName: "pages_download_excel" */))
-const _7527ea1a = () => interopDefault(import('..\\pages\\error\\404.vue' /* webpackChunkName: "pages_error_404" */))
-const _40745842 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _7a3960a2 = () => interopDefault(import('..\\pages\\admin\\index.vue' /* webpackChunkName: "pages_admin_index" */))
+const _ffa40c66 = () => interopDefault(import('..\\pages\\animation\\index.vue' /* webpackChunkName: "pages_animation_index" */))
+const _868e7f70 = () => interopDefault(import('..\\pages\\login\\index.vue' /* webpackChunkName: "pages_login_index" */))
+const _06967b65 = () => interopDefault(import('..\\pages\\tabs\\index.vue' /* webpackChunkName: "pages_tabs_index" */))
+const _05e180f8 = () => interopDefault(import('..\\pages\\user\\index.vue' /* webpackChunkName: "pages_user_index" */))
+const _125be700 = () => interopDefault(import('..\\pages\\download\\excel.vue' /* webpackChunkName: "pages_download_excel" */))
+const _01923d6f = () => interopDefault(import('..\\pages\\error\\404.vue' /* webpackChunkName: "pages_error_404" */))
+const _e2d01be0 = () => interopDefault(import('..\\pages\\user\\example.vue' /* webpackChunkName: "pages_user_example" */))
+const _855a1448 = () => interopDefault(import('..\\pages\\user\\test.vue' /* webpackChunkName: "pages_user_test" */))
+const _941df83a = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -86,31 +89,43 @@ export function createRouter() {
 
     routes: [{
       path: "/admin",
-      component: _a25445b4,
+      component: _7a3960a2,
       name: "admin"
     }, {
       path: "/animation",
-      component: _3d1ed75e,
+      component: _ffa40c66,
       name: "animation"
     }, {
       path: "/login",
-      component: _1d558668,
+      component: _868e7f70,
       name: "login"
     }, {
       path: "/tabs",
-      component: _8413433e,
+      component: _06967b65,
       name: "tabs"
     }, {
+      path: "/user",
+      component: _05e180f8,
+      name: "user"
+    }, {
       path: "/download/excel",
-      component: _fe4c2808,
+      component: _125be700,
       name: "download-excel"
     }, {
       path: "/error/404",
-      component: _7527ea1a,
+      component: _01923d6f,
       name: "error-404"
     }, {
+      path: "/user/example",
+      component: _e2d01be0,
+      name: "user-example"
+    }, {
+      path: "/user/test",
+      component: _855a1448,
+      name: "user-test"
+    }, {
       path: "/",
-      component: _40745842,
+      component: _941df83a,
       name: "index"
     }],
 
