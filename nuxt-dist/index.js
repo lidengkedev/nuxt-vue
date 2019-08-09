@@ -11,7 +11,7 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_axios_1369ba18 from 'nuxt_plugin_axios_1369ba18' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_axios_7cb25520 from 'nuxt_plugin_axios_7cb25520' // Source: .\\axios.js (mode: 'all')
 import nuxt_plugin_elementui_69306e1c from 'nuxt_plugin_elementui_69306e1c' // Source: ..\\plugins\\element-ui (mode: 'all')
 import nuxt_plugin_index_2a8b2b8f from 'nuxt_plugin_index_2a8b2b8f' // Source: ..\\plugins\\server_site\\index (mode: 'all')
 
@@ -155,8 +155,8 @@ async function createApp(ssrContext) {
 
   // Plugin execution
 
-  if (typeof nuxt_plugin_axios_1369ba18 === 'function') {
-    await nuxt_plugin_axios_1369ba18(app.context, inject)
+  if (typeof nuxt_plugin_axios_7cb25520 === 'function') {
+    await nuxt_plugin_axios_7cb25520(app.context, inject)
   }
 
   if (typeof nuxt_plugin_elementui_69306e1c === 'function') {

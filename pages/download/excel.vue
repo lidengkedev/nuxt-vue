@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="app-container">
         <down-load-excel btn-text="Excel文件下载" @on-click="download"></down-load-excel>
     </div>
 </template>

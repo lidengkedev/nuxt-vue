@@ -1,5 +1,14 @@
 <template>
   <div class="layout-default">
+    <div class="nuxt-warpper">
+      <nuxt-link class="nuxt-link" to="/">首页</nuxt-link>
+      <nuxt-link class="nuxt-link" to="/admin">用户中心</nuxt-link>
+      <nuxt-link class="nuxt-link" to="/animation">动画</nuxt-link>
+      <nuxt-link class="nuxt-link" to="/download/excel">下载Excel</nuxt-link>
+      <nuxt-link class="nuxt-link" to="/error/404">404</nuxt-link>
+      <nuxt-link class="nuxt-link" to="/login">登录</nuxt-link>
+      <nuxt-link class="nuxt-link" to="/tabs">Tabs</nuxt-link>
+    </div>
     <nuxt />
   </div>
 </template>
@@ -51,5 +60,23 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+/* 菜单按钮组 */
+.nuxt-warpper {
+  padding: 10px 10%;
+  background-color: #35495e;
+}
+.nuxt-link {
+    width: 100px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 10px;
+    border: 1px solid #eaeaea;
+    color: #FFF;
+    transition-duration: .3s;
+}
+.nuxt-link:hover {
+    color: #FFF;
+    background-color: #52ccba;
 }
 </style>

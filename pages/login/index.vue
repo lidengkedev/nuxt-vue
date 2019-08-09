@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="login">
         <div class="form-warpper">
             <h2 class="title">登录</h2>
             <div class="form-item">
@@ -80,23 +80,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #3a8ee6;
+}
 .form-warpper {
     width: 440px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30vh;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgba(58,142,230,0.3);
     border-radius: 10px;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(8, 108, 212, 0.72);
     .title {
         text-align: center;
         margin-top: 20px;
         margin-bottom: 40px;
         font-size: 24px;
+        color: #FFF;
     }
     .form-item {
         position: relative;
         margin-bottom: 20px;
+        min-height: 48px;
         font-size: 0;
         .name {
             position: absolute;
@@ -107,6 +118,7 @@ export default {
             width: 100px;
             display: inline-block;
             font-size: 14px;
+            color: #FFF;
         }
         .form-input {
             margin-left: 100px;
@@ -118,6 +130,8 @@ export default {
             border-radius: 4px;
             white-space: nowrap;
             font-size: 14px;
+            // color: #fff;
+            background-color: rgba(255,255,255,0.7);
             &:hover {
                 border-color: #52ccba;
             }
@@ -156,7 +170,7 @@ export default {
         border-radius: 4px;
         font-size: 18px;
         color: #fff;
-        background-color: #52ccba;
+        background-color: rgba(58,142,230,0.3);
         cursor: pointer;
     }
 }

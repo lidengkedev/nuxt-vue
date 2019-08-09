@@ -1,13 +1,13 @@
 <template>
-    <section>
-        这是一个首页
+    <section class="app-container">
+        用户中心
     </section>
 </template>
 
 <script>
 export default {
     head: {
-        title: 'title',
+        title: '用户中心',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },

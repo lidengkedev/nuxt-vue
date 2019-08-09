@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="app-container">
 		<!-- 标题 -->
 		<h1 class="main-title">动画</h1>
 
