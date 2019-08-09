@@ -1,5 +1,6 @@
 <template>
     <section class="login">
+        <img :src="user_avator" alt="">
         <div class="form-warpper">
             <h2 class="title">登录</h2>
             <div class="form-item">
@@ -96,7 +97,7 @@ export default {
     padding: 20px;
     background-color: rgba(58,142,230,0.3);
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(8, 108, 212, 0.72);
+    box-shadow: 2px 2px 10px #3F51B5;
     .title {
         text-align: center;
         margin-top: 20px;
