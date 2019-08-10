@@ -4,7 +4,7 @@ const axios = require('axios');
 module.exports = {
     mode: 'universal',
     // 为Nuxt.js应用程序定义.nuxt(默认)目录
-    buildDir: 'nuxt-dist',
+    // buildDir: 'nuxt-dist',
 
     /*
     ** Headers of the page
