@@ -13,8 +13,8 @@
           </li>
         </ul>
       </section>
-      <section ref="content" class="tabs-right">
-        <div class="tabs-content-warpper">
+      <section class="tabs-right">
+        <div ref="content" class="tabs-content-warpper">
           <div class="tabs-content">
             <slot></slot>
           </div>
@@ -50,6 +50,7 @@ export default {
     tabsHandle(index) {
       this.currentIndex = index
       this.$emit('on-click', index)
+      this.$refs.content.scrollTop = 0
     }
   }
 }
@@ -102,6 +103,7 @@ export default {
       padding: 20px;
       overflow-x: hidden;
       overflow-y: auto;
+      transition: all 1s ease-in;
       .tabs-content {
         font-size: 14px;
         .user-name {

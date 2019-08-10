@@ -2,31 +2,6 @@
   <div class="app-container">
     <i-tabs :tabs="tabs" :width="100" @on-click="tabsClick">
       <p v-for="(item, index) in list" :key="index">{{ item.name }}</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
-      <p>这是一个测试</p>
     </i-tabs>
   </div>
 </template>
@@ -52,7 +27,16 @@ export default {
         { id: 8, name: '老十' },
         { id: 9, name: '老十一' },
         { id: 10, name: '老十二' },
-        { id: 11, name: '老十三' }
+        { id: 11, name: '老十四' },
+        { id: 11, name: '老十五' },
+        { id: 11, name: '老十六' },
+        { id: 11, name: '老十七' },
+        { id: 11, name: '老十八' },
+        { id: 11, name: '老十九' },
+        { id: 11, name: '老二十' },
+        { id: 11, name: '老二十一' },
+        { id: 11, name: '老二十二' },
+        { id: 11, name: '老二十三' }
       ]
     }
   },

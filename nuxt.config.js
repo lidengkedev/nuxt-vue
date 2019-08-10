@@ -1,5 +1,4 @@
 // import pkg from './package'
-const axios = require('axios');
 
 module.exports = {
     mode: 'universal',
@@ -40,7 +39,8 @@ module.exports = {
     */
     plugins: [
         { src: '~plugins/element-ui', ssr: true },
-        { src: '~plugins/server_site/index', ssr: true }
+        { src: '~plugins/server_site/index', ssr: true },
+        { src: '~plugins/svg-icon', ssr: true }
     ],
 
     /*
@@ -89,7 +89,24 @@ module.exports = {
                 // })
             }
         },
-        vender: ['axios']
+        vender: ['axios'],
+        loaders: [
+            {
+                test: /\.(png|jpeg|jpg|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 1024,
+                    name: 'img/[name].[hash:7].[ext]'
+                }
+            }, {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 1024,
+                    name: 'fonts/[name].[hash:7].[ext]'
+                }
+            }
+        ]
     },
 
     /**

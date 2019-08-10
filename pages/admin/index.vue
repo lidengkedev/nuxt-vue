@@ -8,7 +8,9 @@
 				</div>
 				<ul class="menu-warpper">
 					<li class="menu-item" v-for="(item, index) in menu" :key="item.id">
-						<a :class="['menu-item-title', currentIndex === index ? 'active' : '']" @click="handleMenu(index)">{{ item.name }}</a>
+						<a :class="['menu-item-title', currentIndex === index ? 'active' : '']" @click="handleMenu(index)">
+							{{ item.name }}
+						</a>
 					</li>
 				</ul>
 			</section>

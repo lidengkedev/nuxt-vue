@@ -1,12 +1,12 @@
 import { login } from '@/api/user'
 
-const state = {
+const state = () => ({
     token: '',
     username: '',
     userid: '',
     avator: '',
     mobile: ''
-}
+})
 const mutations = {
     // 设置 token
     SET_TOKEN: (state, token) => {

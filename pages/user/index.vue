@@ -16,10 +16,12 @@
       </div>
       <div class="plane-table-warpper">
         <table class="plane-table">
-          <tr class="plane-item" v-for="item in table" :key="item.id">
-            <td class="plane-item-cell">{{ item.key }}：</td>
-            <td class="plane-item-cell">{{ item.value }}</td>
-          </tr>
+          <tbody>
+            <tr class="plane-item" v-for="item in table" :key="item.id">
+              <td class="plane-item-cell">{{ item.key }}：</td>
+              <td class="plane-item-cell">{{ item.value }}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -30,10 +32,12 @@
       </div>
       <div class="plane-table-warpper">
         <table class="plane-table">
-          <tr class="plane-item" v-for="item in money" :key="item.id">
-            <td class="plane-item-cell">{{ item.key }}：</td>
-            <td class="plane-item-cell">{{ item.value }}</td>
-          </tr>
+          <tbody>
+            <tr class="plane-item" v-for="item in money" :key="item.id">
+              <td class="plane-item-cell">{{ item.key }}：</td>
+              <td class="plane-item-cell">{{ item.value }}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -44,10 +48,12 @@
       </div>
       <div class="plane-table-warpper">
         <table class="plane-table">
-          <tr class="plane-item" v-for="item in safe" :key="item.id">
-            <td class="plane-item-cell">{{ item.key }}：</td>
-            <td class="plane-item-cell">{{ item.value }}</td>
-          </tr>
+          <tbody>
+            <tr class="plane-item" v-for="item in safe" :key="item.id">
+              <td class="plane-item-cell">{{ item.key }}：</td>
+              <td class="plane-item-cell">{{ item.value }}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
