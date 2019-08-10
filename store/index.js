@@ -1,15 +1,30 @@
 import Vuex from 'vuex'
+import user from './modules/user'
 
 new Vuex.Store({
     state: () => ({
-      counter: 0
+      counter: 0,
+      token: ''
     }),
     mutations: {
       increment (state) {
         state.counter++
+      },
+      REMOVE_TOKEN: (state) => {
+          state.token = ''
+          window.localStorage.removeItem('token')
       }
     },
+    actions: {
+        logout({ commit }) {
+            return new Promise((resolve, reject) => {
+                commit('REMOVE_TOKEN')
+                resolve()
+            })
+        }
+    },
     modules: {
+        user,
         todos: {
             namespaced: true,
             state: () => ({

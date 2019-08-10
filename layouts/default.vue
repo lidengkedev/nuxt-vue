@@ -8,10 +8,25 @@
       <nuxt-link class="nuxt-link" to="/error/404">404</nuxt-link>
       <nuxt-link class="nuxt-link" to="/login">登录</nuxt-link>
       <nuxt-link class="nuxt-link" to="/tabs">Tabs</nuxt-link>
+      <button class="btn logout" @click="logout">退出登录</button>
     </div>
     <nuxt />
   </div>
 </template>
+
+<script>
+import { Message } from 'element-ui'
+export default {
+  methods: {
+    logout() {
+      this.$store.dispatch('modules/user/logout').then(() => {
+        Message.success('用户已退出登录')
+        this.$router.push('/login')
+      })
+    }
+  }
+}
+</script>
 
 <style>
 html {
@@ -79,4 +94,17 @@ html {
     color: #FFF;
     background-color: #52ccba;
 }
+</style>
+
+<style lang="scss" scoped>
+  .btn {
+    padding: 5px 10px;
+    border-width: 0;
+    color: #FFF;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .logout {
+    float: right;
+  }
 </style>

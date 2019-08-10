@@ -1,4 +1,5 @@
 import Axios from 'axios'
+import { Message } from 'element-ui'
 
 const options = {
     // baseUrl: 'http://localhost:4000',
@@ -31,7 +32,7 @@ axios.interceptors.response.use(
         }
         const data = response.data
         if (data.status !== 1) {
-            alert(data.message)
+            Message.error(data.message)
         } else {
             return data
         }

@@ -41,9 +41,9 @@ module.exports = {
     } else {
       let message = 'error'
       if (username != 'admin') {
-        message = 'username 不正确'
+        message = '用户名不正确'
       } else if (password != '123456') {
-        message = 'password 不正确'
+        message = '密码不正确'
       }
       res.json({
         status: -1,
