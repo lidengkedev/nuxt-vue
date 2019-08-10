@@ -2,7 +2,7 @@
     "name": "nuxt-vue",
     "version": "1.0.0",
     "description": "My peachy Nuxt.js project",
-    "author": "LDK",
+    "author": "lidengke0221@126.com",
     "private": true,
     "config": {
         "nuxt": {
