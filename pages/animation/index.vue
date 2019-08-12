@@ -45,6 +45,15 @@
 
 <script>
 export default {
+	head() {
+		return {
+			title: '动画',
+			meta: [],
+			link: [
+				{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+			]
+		}
+	},
 	data() {
 		return {
 			mainTitle: false,

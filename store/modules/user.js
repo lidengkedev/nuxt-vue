@@ -1,6 +1,8 @@
 import { login } from '@/api/user'
+// import { getToken, setToken, removeToken } from '@/plugins/cookie'
 
 const state = () => ({
+    // token: getToken(),
     token: '',
     username: '',
     userid: '',
@@ -41,6 +43,7 @@ const actions = {
                 commit('SET_USERID', data.userId)
                 commit('SET_AVATOR', data.avator)
                 commit('SET_MOBILE', data.mobile)
+                setToken(data.token)
                 resolve(res)
             }).catch(err => reject(err))
         })
@@ -48,6 +51,7 @@ const actions = {
     // 用户登出
     logout({ commit }) {
         commit('SET_TOKEN', '')
+        removeToken()
     }
 }
 

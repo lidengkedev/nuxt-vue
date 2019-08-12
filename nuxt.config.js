@@ -40,7 +40,9 @@ module.exports = {
     plugins: [
         { src: '~plugins/element-ui', ssr: true },
         { src: '~plugins/server_site/index', ssr: true },
-        { src: '~plugins/svg-icon', ssr: true }
+        { src: '~plugins/svg-icon', ssr: true },
+        { src: '~plugins/cookie', ssr: false },// 仅在客户端使用
+        { src: '~plugins/router', ssr: false }
     ],
 
     /*
@@ -57,14 +59,9 @@ module.exports = {
             devtools: false
         }
     },
-    // transition 用于设置页面切换过渡效果的默认属性值。
-    // 想了解当 transition 的值为对象类型时有哪些可用的属性，请参考 https://zh.nuxtjs.org/api/pages-transition#object
-    transition: {
-        name: 'page',
-        mode: 'out-in',
-        beforeEnter (el) {
-            console.log('Before enter...')
-        }
+    // 路由配置
+    router: {
+        mode: 'history'
     },
     // 设置缓存
     cache: true,

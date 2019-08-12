@@ -7,7 +7,7 @@
 <script>
 import axios from 'axios'
 export default {
-    components: {},
+    name: 'index',
     head: {
         title: '首页',
         meta: [

@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="form-item">
-          <button class="btn-login" @click="login">登录</button>
+          <button class="btn-login" :disabled="disabled" @click="login">登录</button>
         </div>
       </form>
     </div>
@@ -56,6 +56,7 @@ export default {
       captcha: '',
       imgCode: '',
       captcha_text: '',
+      disabled: false,
       loginBgList: [require('../../assets/login/login-01.jpg'), require('../../assets/login/login-02.jpg'), require('../../assets/login/login-03.jpg')],
       bgIndex: 0,
       loginbgClass: ['bg-0']
@@ -68,6 +69,7 @@ export default {
       captcha: '',
       imgCode: '',
       captcha_text: '',
+      disabled: false,
       loginBgList: [require('../../assets/login/login-01.jpg'), require('../../assets/login/login-02.jpg'), require('../../assets/login/login-03.jpg')],
       bgIndex: 0,
       loginbgClass: ['bg-0']
@@ -107,9 +109,11 @@ export default {
         Message.warning('用户名和密码不能为空')
         return false
       } else if (this.captcha.toLowerCase() === this.captcha_text.toLowerCase()) {
+        this.disabled = true
         this.$store.dispatch('modules/user/login', { username, password, captcha }).then(res => {
           Message.success('登录成功')
           this.$router.push('/')
+          this.disabled = false
         }).catch(err => console.log(err))
       } else {
         Message.warning('验证码不正确')

@@ -67,7 +67,7 @@ export default {
   },
   head() {
     return {
-      title: this.title,
+      title: 'Tabs 示例',
       meta: [
         { hid: 'desctiption', name: 'descripttion', content: 'My custom description' }
       ]
