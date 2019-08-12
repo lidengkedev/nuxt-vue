@@ -9,20 +9,3 @@ export function DownLoadExcelApi(data) {
         params: data
     })
 }
-
-// 获取图片验证码
-export function Captcha() {
-    return axios({
-        method: 'get',
-        url: '/api/captcha'
-    })
-}
-
-// 登录
-export function Login(data) {
-    return axios({
-        method: 'post',
-        url: '/api/login',
-        data
-    })
-}

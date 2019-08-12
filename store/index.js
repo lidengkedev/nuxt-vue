@@ -1,11 +1,13 @@
 import Vuex from 'vuex'
 import user from './modules/user'
+import getters from './getters'
 
 new Vuex.Store({
     state: () => ({
       counter: 0,
       token: ''
     }),
+    getters,
     mutations: {
       increment (state) {
         state.counter++

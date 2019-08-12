@@ -53,6 +53,18 @@ export default {
 			]
 		}
 	},
+	asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+		return {
+			username: '夕阳下的湖泽',
+			user_avator: images[0].user_varator,
+			currentIndex: 0,
+			menu: [
+				{ id: 1, name: '个人中心' },
+				{ id: 2, name: '我的测试' },
+				{ id: 3, name: '我的示例' }
+			]
+		}
+	},
 	computed: {
 		// 组件渲染
 		componentId() {

@@ -1,14 +1,17 @@
 <template>
   <div class="layout-default">
     <div class="nuxt-warpper">
-      <nuxt-link class="nuxt-link" to="/">首页</nuxt-link>
-      <nuxt-link class="nuxt-link" to="/admin">用户中心</nuxt-link>
-      <nuxt-link class="nuxt-link" to="/animation">动画</nuxt-link>
-      <nuxt-link class="nuxt-link" to="/download/excel">下载Excel</nuxt-link>
-      <nuxt-link class="nuxt-link" to="/error/404">404</nuxt-link>
-      <nuxt-link class="nuxt-link" to="/login">登录</nuxt-link>
-      <nuxt-link class="nuxt-link" to="/tabs">Tabs</nuxt-link>
-      <button class="btn logout" @click="logout">退出登录</button>
+      <template v-if="is_login">
+        <nuxt-link class="nuxt-link" to="/">首页</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/admin">用户中心</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/animation">动画</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/download/excel">下载Excel</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/error/404">404</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/login">登录</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/tabs">Tabs</nuxt-link>
+        <button class="btn logout" @click="logout">退出登录</button>
+      </template>
+      <button v-else class="btn login" @click="login">登录</button>
     </div>
     <nuxt />
   </div>
@@ -17,7 +20,17 @@
 <script>
 import { Message } from 'element-ui'
 export default {
+  computed: {
+    is_login() {
+      return !!this.$store.getters.token
+    }
+  },
   methods: {
+    // 登录
+    login() {
+      this.$router.push('/login')
+    },
+    // 退出登录
     logout() {
       this.$store.dispatch('modules/user/logout').then(() => {
         Message.success('用户已退出登录')
@@ -79,6 +92,7 @@ html {
 /* 菜单按钮组 */
 .nuxt-warpper {
   padding: 10px 10%;
+  height: 50px;
   background-color: #35495e;
 }
 .nuxt-link {
@@ -103,6 +117,9 @@ html {
     color: #FFF;
     background-color: transparent;
     cursor: pointer;
+  }
+  .login {
+    float: right;
   }
   .logout {
     float: right;

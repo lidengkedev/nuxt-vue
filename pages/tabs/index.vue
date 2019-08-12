@@ -10,9 +10,6 @@
 import ITabs from '@/components/Tabs/Tab'
 export default {
   components: { ITabs },
-  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
-    // 
-  },
   data() {
     return {
       tabs: ['Tabs 1', 'Tabs 2', 'Tabs 3', 'Tabs 4', 'Tabs 5', 'Tabs 6', 'Tabs 7'],
@@ -37,6 +34,42 @@ export default {
         { id: 11, name: '老二十一' },
         { id: 11, name: '老二十二' },
         { id: 11, name: '老二十三' }
+      ]
+    }
+  },
+  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
+    return {
+      title: 'Tabs',
+      tabs: ['Tabs 1', 'Tabs 2', 'Tabs 3', 'Tabs 4', 'Tabs 5', 'Tabs 6', 'Tabs 7'],
+      list: [
+        { id: 1, name: '张三' },
+        { id: 2, name: '李四' },
+        { id: 3, name: '王五' },
+        { id: 4, name: '赵六' },
+        { id: 5, name: '田七' },
+        { id: 6, name: '老八' },
+        { id: 7, name: '老九' },
+        { id: 8, name: '老十' },
+        { id: 9, name: '老十一' },
+        { id: 10, name: '老十二' },
+        { id: 11, name: '老十四' },
+        { id: 11, name: '老十五' },
+        { id: 11, name: '老十六' },
+        { id: 11, name: '老十七' },
+        { id: 11, name: '老十八' },
+        { id: 11, name: '老十九' },
+        { id: 11, name: '老二十' },
+        { id: 11, name: '老二十一' },
+        { id: 11, name: '老二十二' },
+        { id: 11, name: '老二十三' }
+      ]
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'desctiption', name: 'descripttion', content: 'My custom description' }
       ]
     }
   },
