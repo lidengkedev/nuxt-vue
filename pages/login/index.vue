@@ -10,7 +10,7 @@
         </div>
         <div class="form-item">
           <label for="" class="name">密码：</label>
-          <input v-model="password" class="form-input" type="password" name="" id="" placeholder="请输入密码，如：123456">
+          <input v-model="password" class="form-input" type="password" name="" autocomplete="off" id="" placeholder="请输入密码，如：123456">
         </div>
         <div class="form-item">
           <label for="" class="name">验证码：</label>

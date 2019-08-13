@@ -10,7 +10,7 @@ export function setToken(token) {
     if (process.client) {
         const date = new Date()
         date.setDate(date.getDate() + 1)
-        Vue.cookie.set(keyToken, token, { expires: date.toGMTString() })
+        Vue.cookie.set(keyToken, token, { expires: date.toGMTString(), domain: 'localhost' })
     }
 }
 

@@ -1,9 +1,8 @@
 import { login } from '@/api/user'
-// import { getToken, setToken, removeToken } from '@/plugins/cookie'
+import { getToken, setToken, removeToken } from '@/plugins/cookie'
 
 const state = () => ({
-    // token: getToken(),
-    token: '',
+    token: getToken(),
     username: '',
     userid: '',
     avator: '',
@@ -31,6 +30,13 @@ const mutations = {
         state.mobile = mobile
     }
 }
+const getters = {
+    token: state => state.token,
+    username: state => state.username,
+    userid: state => state.userid,
+    avator: state => state.avator,
+    mobile: state => state.mobile
+}
 const actions = {
     // 用户登录
     login({ commit }, loginFrom) {
@@ -52,12 +58,18 @@ const actions = {
     logout({ commit }) {
         commit('SET_TOKEN', '')
         removeToken()
+    },
+    // 设置 Token
+    setToken({ commit }, token) {
+        commit('SET_TOKEN', token)
+        setToken(token)
     }
 }
 
 export default {
     namespaced: true,
     state,
+    getters,
     mutations,
     actions
 }

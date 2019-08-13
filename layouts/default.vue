@@ -22,7 +22,7 @@ import { Message } from 'element-ui'
 export default {
   computed: {
     is_login() {
-      return !!this.$store.getters.token
+      return !!this.$store.state.modules.user.token
     }
   },
   methods: {
