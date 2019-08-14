@@ -1,8 +1,5 @@
 <template>
 	<div class="app-container">
-		<!-- 标题 -->
-		<h1 class="main-title">动画</h1>
-
 		<!-- 文本淡入淡出 -->
 		<div class="text-animation">
 			<el-button size="small" @click="fadeClick">淡入淡出</el-button>

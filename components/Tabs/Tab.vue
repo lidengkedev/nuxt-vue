@@ -61,7 +61,7 @@ export default {
   padding: 15px;
 }
 .tabs-warpper {
-  font-size: 0;
+  display: flex;
   border: 1px solid #eaeaea;
   .tabs-left {
     width: 100px;
