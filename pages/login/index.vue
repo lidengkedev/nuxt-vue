@@ -147,7 +147,7 @@ export default {
 .login {
   position: relative;
   width: 100%;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 60px);
   overflow: hidden;
   transition: all 1s ease-in-out;
   background-size: cover;
