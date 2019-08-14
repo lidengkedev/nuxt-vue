@@ -15,7 +15,8 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "server": "node server/index.js"
+        "server": "node server/index.js",
+        "file:download": "http-server -p 5000"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.5.4",

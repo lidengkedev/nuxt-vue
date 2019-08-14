@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import { Message } from 'element-ui'
+import { getToken } from './cookie'
 
 const options = {
     // baseUrl: 'http://localhost:4000',
@@ -16,7 +17,7 @@ const axios = Axios.create(options)
 // 请求配置
 axios.interceptors.request.use(
     config => {
-        // config.headers.common['token'] = window.localStorage.getItem('token') || ''
+        config.headers.common['token'] = getToken()
         return config
     },
     err => {

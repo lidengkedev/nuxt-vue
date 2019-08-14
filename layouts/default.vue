@@ -6,6 +6,7 @@
         <nuxt-link class="nuxt-link" to="/admin">用户中心</nuxt-link>
         <nuxt-link class="nuxt-link" to="/animation">动画</nuxt-link>
         <nuxt-link class="nuxt-link" to="/download/excel">下载Excel</nuxt-link>
+        <nuxt-link class="nuxt-link" to="/download">文件下载</nuxt-link>
         <nuxt-link class="nuxt-link" to="/error/404">404</nuxt-link>
         <nuxt-link class="nuxt-link" to="/login">登录</nuxt-link>
         <nuxt-link class="nuxt-link" to="/tabs">Tabs</nuxt-link>

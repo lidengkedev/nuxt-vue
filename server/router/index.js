@@ -1,10 +1,12 @@
 const express = require('express')
+const path = require('path')
 const svgCaptcha = require('svg-captcha') // svg 图片验证码插件
 const fs = require('fs') // 文件系统
 
 // 生成路由实例
 const router = express.Router()
 
+// 图片验证码
 router.get('/captcha', function(req, res, next) {
   const captcha = svgCaptcha.create({
     size: 4, // 验证码长度
@@ -22,14 +24,24 @@ router.get('/captcha', function(req, res, next) {
     message: 'success'
   })
   next()
-}) // 生成图片验证码
+})
+
+// 文件下载
 router.get('/download/file', function(req, res, next) {
   res.setHeader('Content-Type', 'application/x-xls')
   res.setHeader('Content-Disposition', 'attachment; filename=' + encodeURIComponent('供应商商品批量导入模板.xls'))
   const data = fs.readFileSync('./download/excel/供应商商品批量导入模板.xls')
   res.send(data)
   next()
-}) // 文件下载
+})
+
+// 文件下载
+router.get('/download/pdf', function(req, res, next) {
+  const data = fs.readFileSync('./download/pdf/全栈增长⼯程师指南.pdf')
+  res.send(data)
+})
+
+// 登录
 router.post('/login', function(req, res) {
   const username = req.body.username
   const password = req.body.password
