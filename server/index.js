@@ -4,7 +4,7 @@ const express = require('express')
 const bodyParser = require("body-parser")
 const router = require('./router/index')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 
 const app = express()
 // 这个很重要，一定要写在路由前面，否则post无法获取body的值，只能拿到{}
