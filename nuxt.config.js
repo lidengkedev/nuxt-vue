@@ -41,7 +41,7 @@ module.exports = {
     plugins: [
         { src: '~plugins/element-ui', ssr: true },
         { src: '~plugins/server_site/index', ssr: true },
-        { src: '~plugins/svg-icon', ssr: true },
+        // { src: '~plugins/svg-icon', ssr: true },
         { src: '~plugins/cookie', ssr: false },// 仅在客户端使用
         { src: '~plugins/router', ssr: false }
     ],
@@ -117,7 +117,7 @@ module.exports = {
      */
     server: {
         port: 3000,
-        host: 'localhost'
+        host: '0.0.0.0'
     },
     proxy: [
         ['/api', { target: 'http://localhost:4000' }],

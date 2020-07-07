@@ -57,7 +57,7 @@
         </el-menu>
         <button class="btn logout" @click="logout">退出</button>
       </template>
-      <template v-else>
+      <template v-else-if="!is_login || $route.path != '/login'">
         <div class="el-menu-demo"></div>
         <button class="btn login"><nuxt-link class="nuxt-link" to="/login">登录</nuxt-link></button>
       </template>
