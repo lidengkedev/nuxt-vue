@@ -7,14 +7,16 @@ export function downloadFile(data, filename, ext) {
         )
     } else {
         // Chrome 浏览器 文件下载
-        const link = document.createElement('a')
-        link.href = URL.createObjectURL(
+        const element = document.createElement('a')
+        const event = document.createEvent('MouseEvents')
+        const url = window.URL.createObjectURL(
             new Blob([data], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })
         )
-        link.download = ext ? `${filename}${ext}` : filename
-        link.target = '_blank'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+        element.download = ext ? `${filename}${ext}` : filename
+        document.body.appendChild(element)
+        event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+        element.dispatchEvent(event)
+        window.URL.revokeObjectURL(url)
+        document.body.removeChild(element)
     }
 }
