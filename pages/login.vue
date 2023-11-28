@@ -66,105 +66,6 @@ onMounted(() => {
 const login = () => {
   router.push({ path: '/', query: { token: 'TOKENKEY' } })
 }
-
-
-/*
-import { captcha, login } from '~/api/user'
-
-export default {
-  head: {
-    title: '登录',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'description', name: 'description', content: '用户登录' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
-  data() {
-    return {
-      username: '',
-      password: '',
-      captcha: '',
-      imgCode: '',
-      captcha_text: '',
-      disabled: false,
-      loginBgList: [
-        require('../../assets/login/login-01.jpg'),
-        require('../../assets/login/login-02.jpg'),
-        require('../../assets/login/login-03.jpg')
-      ],
-      bgIndex: 0,
-      loginbgClass: ['bg-0']
-    }
-  },
-  asyncData({isDev, route, store, env, params, query, req, res, redirect, error}) {
-    return {
-      username: '',
-      password: '',
-      captcha: '',
-      imgCode: '',
-      captcha_text: '',
-      disabled: false,
-      loginBgList: [
-        require('../../assets/login/login-01.jpg'), 
-        require('../../assets/login/login-02.jpg'), 
-        require('../../assets/login/login-03.jpg')
-      ],
-      bgIndex: 0,
-      loginbgClass: ['bg-0']
-    }
-  },
-  fetch() {
-    
-  },
-  created() {
-    this.getCaptcha()
-    this.setLoginBg()
-  },
-  methods: {
-    // 登录背景幻灯片
-    setLoginBg() {
-      setInterval(() => {
-        this.bgIndex = this.bgIndex >= 2 ? 0 : (this.bgIndex + 1)
-        this.loginBgPlay(this.bgIndex)
-      }, 6000);
-    },
-    loginBgPlay(index) {
-      this.loginbgClass = [`bg-${index}`]
-    },
-    // 获取验证码
-    getCaptcha() {
-      captcha().then(res => {
-        if (res.status == 1) {
-          this.imgCode = res.data.img
-          this.captcha_text = res.data.text
-        }
-      })
-    },
-    // 登录
-    login() {
-      const { username, password, captcha } = this.$data
-      if (username.trim() === '' || password.trim() === '') {
-        alert('用户名和密码不能为空')
-        return false
-      } else if (this.captcha.toLowerCase() === this.captcha_text.toLowerCase()) {
-        this.disabled = true
-        this.$store.dispatch('modules/user/login', { username, password, captcha }).then(res => {
-          alert('登录成功')
-          this.$router.push('/')
-          this.disabled = false
-        }).catch(err => console.log(err))
-      } else {
-        alert('验证码不正确')
-        this.getCaptcha()
-      }
-    }
-  }
-}
-*/
 </script>
 
 <style lang="scss" scoped>
@@ -189,13 +90,13 @@ export default {
   transition: all 1s ease-in-out;
   background-size: cover;
   &.bg-0 {
-    background: url('../../assets/login/login-01.jpg') no-repeat center;
+    background: url('/img/login/login-01.jpg') no-repeat center;
   }
   &.bg-1 {
-    background: url('../../assets/login/login-02.jpg') no-repeat center;
+    background: url('/img/login/login-02.jpg') no-repeat center;
   }
   &.bg-2 {
-    background: url('../../assets/login/login-03.jpg') no-repeat center;
+    background: url('/img/login/login-03.jpg') no-repeat center;
   }
 }
 .form-warpper {

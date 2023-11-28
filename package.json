@@ -12,7 +12,6 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@vueuse/nuxt": "^10.6.1",
-    "axios": "^1.6.2",
     "nuxt": "^3.8.2",
     "sass": "^1.69.5",
     "svg-captcha": "^1.4.0",
