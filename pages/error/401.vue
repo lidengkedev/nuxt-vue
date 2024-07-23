@@ -26,10 +26,10 @@
 </template>
 
 <script setup lang="ts">
-
-let errGif: string = '/img/401_images/401.gif' + '?' + +new Date()
-let ewizardClap:string = 'https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646'
-let dialogVisible: boolean = false
+import { ref } from 'vue'
+let errGif = ref('/img/401_images/401.gif' + '?' + +new Date())
+let ewizardClap = ref('https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646')
+let dialogVisible = ref(false)
 </script>
 
 <style lang="scss" scoped>

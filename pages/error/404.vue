@@ -18,7 +18,8 @@
 </template>
 
 <script lang="ts" setup>
-let message: string = ''
+import { ref } from 'vue'
+let message = ref('404 Not Found')
 </script>
 
 <style lang="scss" scoped>

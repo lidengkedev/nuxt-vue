@@ -8,5 +8,11 @@ export default defineNuxtConfig({
   router: {},
   build: {},
   dev: process.env.NODE_ENV !== 'production',
-  devServer: {}
+  devServer: {},
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
+  },
 })

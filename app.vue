@@ -3,7 +3,8 @@
 </template>
 
 <script setup>
-
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped>
+@import url('@/assets/css/index.css');
+</style>
