@@ -10,9 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "^1.4.2",
     "@vueuse/nuxt": "^10.9.0",
-    "nuxt": "^3.11.1",
+    "nuxt": "^3.13.1",
     "sass": "^1.72.0",
     "svg-captcha": "^1.4.0",
     "vue": "^3.4.21",
