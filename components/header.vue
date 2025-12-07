@@ -1,6 +1,11 @@
 <template>
   <header class="menu-inner">
-    <NuxtLink v-for="(item, index) in menuList" :key="index" :to="item.url" class="menu-item">{{ item.title }}</NuxtLink>
+    <NuxtLink
+      v-for="(item, index) in menuList"
+      :key="index"
+      :to="item.url"
+      class="menu-item"
+    >{{ item.title }}</NuxtLink>
   </header>
 </template>
 
